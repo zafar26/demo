@@ -85,7 +85,7 @@ export default function MenuAppBar({ toggleDrawer, color }) {
                         <MenuIcon onClick={toggleDrawer('left', true)} />
                     </IconButton>
                     <Typography variant="h6" className={classes.title} >
-                        FinBook Lite
+                        Sample PWA
                     </Typography>
 
                     {auth && (

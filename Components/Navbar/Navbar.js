@@ -65,52 +65,33 @@ export default function Navbar({ userType }) {
     };
     const handleIcon = (link, color) => {
         if (link === 'Home') return <HomeIcon style={{ color }} />
-        if (link === 'Approvals') return <DoneAllRoundedIcon style={{ color }} />
-        if (link === 'Financial Position') return <BusinessIcon style={{ color }} />
-        if (link === 'Recivable Payable') return <CallReceivedIcon style={{ color }} />
-        if (link === 'Trail Balance') return <AccountBalanceWalletIcon style={{ color }} />
-        if (link === 'Balance Sheet') return <ListAltIcon style={{ color }} />
-        if (link === 'P/L Normal') return <InsertChartIcon style={{ color }} />
-        if (link === 'Profitability') return <TrendingUpIcon style={{ color }} />
-        if (link === 'Cashbook') return <BookIcon style={{ color }} />
+        if (link === 'Admin Profile' || link == 'User Profile' || link == "Vendor Profile") return <ListAltIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
     }
 
     const links = {
-        Home:
-        {
-            path: '/',
 
+        ['Admin Profile']: {
+            path: '/profile',
         },
-        Approvals: {
-            path: '/approvals',
-        },
-        ['Financial Position']: {
-            path: '/financial',
+        Settings: {
+            path: '/settings',
 
+        }
+    }
+    const clientLinks = {
+        ['User Profile']: {
+            path: '/profile',
         },
-        ['Recivable Payable']: {
-            path: '/recivable',
+        Settings: {
+            path: '/settings',
 
-        },
-        ['Trail Balance']: {
-            path: '/trailBalance',
+        }
+    }
 
-        },
-        ['Balance Sheet']: {
-            path: '/balanceSheet',
-        },
-        ['P/L Normal']: {
-            path: '/plNormal',
-
-        },
-        Profitability: {
-            path: '/profitability',
-
-        },
-        Cashbook: {
-            path: '/cashbook',
-
+    const vendorLinks = {
+        ['Vendor Profile']: {
+            path: '/profile',
         },
         Settings: {
             path: '/settings',
@@ -119,9 +100,9 @@ export default function Navbar({ userType }) {
     }
     let arr = []
     if (userType == "Client") {
-        arr = Object.entries(links).splice(0, 5)
+        arr = Object.entries(clientLinks)
     } else if (userType == "Vendor") {
-        arr = Object.entries(links).splice(5, 10)
+        arr = Object.entries(vendorLinks)
     } else {
         arr = Object.entries(links)
     }
@@ -141,7 +122,7 @@ export default function Navbar({ userType }) {
                 <div style={{ height: '67px', backgroundColor: '#fff', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                     <ArrowBackIcon style={{ color }} />
                     <h6 style={{ color, fontSize: '1.25rem' }}>
-                        FinBook Lite
+                        Sample PWA
                     </h6>
                 </div>
                 <Divider />
