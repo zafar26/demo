@@ -122,6 +122,8 @@ export default function Navbar({ userType }) {
         arr = Object.entries(links).splice(0, 5)
     } else if (userType == "Vendor") {
         arr = Object.entries(links).splice(5, 10)
+    } else {
+        arr = Object.entries(links)
     }
 
 
