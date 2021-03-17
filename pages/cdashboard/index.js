@@ -101,7 +101,7 @@ export default function dataGrid() {
                     animate="visible"
                     exit="exit"
                     className={classes.root}
-                    style={{ marginTop: '80px', width: '92vw', height: '80vh', backgroundColor: 'white', overflow: 'scroll', position: 'relative' }}>
+                    style={{ marginTop: '80px', width: '100vw', height: '80vh', backgroundColor: 'white', overflow: 'scroll', position: 'relative' }}>
                     <h3 style={{ display: 'flex', justifyContent: 'center' }}>User Dashboard</h3>
                     <DataGrid
                         columns={columns}

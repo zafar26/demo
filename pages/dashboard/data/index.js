@@ -1,12 +1,12 @@
-import { dummyData } from '../../Components/data/index'
+import { dummyData } from '../../../Components/data/index'
 import { DataGrid } from '@material-ui/data-grid';
 import clsx from 'clsx';
 // import { useLiveQuery } from "dexie-react-hooks";
 import { makeStyles } from '@material-ui/core/styles';
 import { motion, AnimatePresence } from "framer-motion"
-import db from '../../myDatabase'
+import db from '../../../myDatabase'
 import { useEffect, useState } from "react";
-import Navbar from "../../Components/Navbar/Navbar"
+import Navbar from "../../../Components/Navbar/Navbar"
 
 
 const containerVariants = {
@@ -85,7 +85,7 @@ export default function dataGrid() {
     return (
         <AnimatePresence>
             <div style={{ width: '100vw', display: 'flex' }}>
-                <Navbar userType="Vendor" />
+                <Navbar userType="Admin" />
             </div>
             <motion.div
                 varriants={containerVariants}
@@ -102,7 +102,7 @@ export default function dataGrid() {
                     exit="exit"
                     className={classes.root}
                     style={{ marginTop: '80px', width: '100vw', height: '80vh', backgroundColor: 'white', overflow: 'scroll', position: 'relative' }}>
-                    <h3 style={{ display: 'flex', justifyContent: 'center' }}>Vendor Dashboard</h3>
+                    <h3 style={{ display: 'flex', justifyContent: 'center', color: 'gray' }}>ADMIN Dashboard</h3>
                     <DataGrid
                         columns={columns}
                         rows={dummyData}

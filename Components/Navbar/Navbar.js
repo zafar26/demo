@@ -67,10 +67,15 @@ export default function Navbar({ userType }) {
         if (link === 'Home') return <HomeIcon style={{ color }} />
         if (link === 'Admin Profile' || link == 'User Profile' || link == "Vendor Profile") return <ListAltIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
+        if (link === 'Data') return <MenuBookIcon style={{ color }} />
     }
 
     const links = {
 
+        Data: {
+            path: '/dashboard/data',
+
+        },
         ['Admin Profile']: {
             path: '/profile',
         },

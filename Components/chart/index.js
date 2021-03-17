@@ -30,7 +30,7 @@ export default function Chart({ data, title }) {
         options.title.text = title
     }
     if (data) {
-        console.log(options.series[0].data, "options")
+        // console.log(options.series[0].data, "options")
         options.series[0].data = data
     }
     return (<div style={{ backgroundColor: 'transparent' }}>
@@ -47,4 +47,4 @@ Chart.getInitialProps = async (props) => {
         data: props.data,
         title: props.title
     }
-}   
+}
