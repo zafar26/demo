@@ -78,8 +78,8 @@ export default function MenuAppBar({ toggleDrawer, color }) {
             //     damping: 20
             // }}
             className={classes.root} >
-
-            <AppBar position="fixed" color="transparent" style={{ display: 'flex', justifyContent: 'center' }}>
+            {console.log(color, "COLOR")}
+            <AppBar position="fixed" color={color} style={{ display: 'flex', justifyContent: 'center', backgroundColor: color }}>
                 <Toolbar >
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon onClick={toggleDrawer('left', true)} />

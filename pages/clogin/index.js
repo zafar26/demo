@@ -60,8 +60,8 @@ export default function Login() {
                         onSubmit={e => router.push('/cdashboard')}
                         noValidate autoComplete="off">
                         <div className={styles.accountCircle}>
-                            <AccountCircle style={{ fontSize: "60" }} />
-                            <h2 >User Login </h2>
+                            <AccountCircle style={{ fontSize: "60", color: 'gray' }} />
+                            <h2 style={{ color: 'gray' }}>User Login </h2>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             {/* {inputs.map((item) =>

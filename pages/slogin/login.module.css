@@ -7,6 +7,7 @@
 #loginPage {
     width: 100vw;
     height: 100vh;
+    background-color: #ffb4b4;
 /* background:linear-gradient(220deg, #0d47a1 10%,#1e88e5 70%, #64b5f6 90%); */
 }
 .pageInner {

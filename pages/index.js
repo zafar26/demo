@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,6 +27,18 @@ export default function Home() {
 
       <main className={styles.main}>
         MAIN
+         <div style={{ display: 'flex' }}>
+
+          <button key="login" onClick={e => router.push('/login')}> GO TO /login
+          </button>
+
+          <button key="clogin" onClick={e => router.push('/clogin')}> GO TO /clogin
+          </button>
+
+          <button key="slogin" onClick={e => router.push('/slogin')}> GO TO /slogin
+          </button>
+        </div>
+
       </main>
 
       <footer className={styles.footer}>

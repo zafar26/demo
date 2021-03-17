@@ -26,11 +26,11 @@ export default function Input(props) {
         <div style={{ marginTop: '10px' }}>
             {props.type == 'password' ?
                 <>
-                    <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined" size="small">
+                    <FormControl variant="outlined" size="small">
                         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                         <OutlinedInput
 
-                            size="small"
+                            // style={{  }}
                             id="outlined-adornment-password"
                             type={props.showPassword ? 'text' : 'password'}
                             value={props.value}
@@ -52,16 +52,18 @@ export default function Input(props) {
                     </FormControl>
                 </>
                 :
-                <FormControl>
-                    <TextField key={props.name} label={props.name}
-                        size="small"
+                <>
+                    <FormControl>
+                        <TextField key={props.name} label={props.name}
+                            size="small"
+                            fullWidth
+                            variant="outlined"
+                            onChange={e => props.onChange(e.target.value)}
+                            value={props.value}
 
-                        variant="outlined"
-                        onChange={e => props.onChange(e.target.value)}
-                        value={props.value}
-
-                    />
-                </FormControl>
+                        />
+                    </FormControl>
+                </>
             }
         </div>)
 }

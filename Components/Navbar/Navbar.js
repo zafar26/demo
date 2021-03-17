@@ -121,13 +121,13 @@ export default function Navbar({ userType }) {
             <List style={{ paddingTop: 0 }}>
                 <div style={{ height: '67px', backgroundColor: '#fff', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                     <ArrowBackIcon style={{ color }} />
-                    <h6 style={{ color, fontSize: '1.25rem' }}>
+                    <h6 style={{ color: 'gray', fontSize: '1.25rem' }}>
                         Sample PWA
                     </h6>
                 </div>
                 <Divider />
                 {arr.map((text, index) =>
-                    <ListItem button key={text[0]} style={{ color: 'gray' }}>
+                    <ListItem button key={text[0]} >
                         <ListItemIcon>
                             {handleIcon(text[0], color)}
                         </ListItemIcon>
@@ -143,9 +143,9 @@ export default function Navbar({ userType }) {
 
     return (
         <React.Fragment key={left} >
-            <MenuAppBar className={styles.container} toggleDrawer={toggleDrawer} color='#DDDDD' />
+            <MenuAppBar className={styles.container} toggleDrawer={toggleDrawer} color={color} />
             <Drawer className={styles.drawer} anchor={left} open={state[left]} onClose={toggleDrawer(left, false)}>
-                {list(left)}
+                {list(left, color)}
             </Drawer>
         </React.Fragment>
     );
