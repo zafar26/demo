@@ -2,32 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Link from 'next/link'
 import MenuAppBar from '../Appbar/index'
 import styles from './navbar.module.css'
 import HomeIcon from '@material-ui/icons/Home';
-import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
-import BusinessIcon from '@material-ui/icons/Business';
-import CallReceivedIcon from '@material-ui/icons/CallReceived';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import ListAltIcon from '@material-ui/icons/ListAlt';
-import InsertChartIcon from '@material-ui/icons/InsertChart';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import SettingsIcon from '@material-ui/icons/Settings';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import DoneAllRoundedIcon from '@material-ui/icons/DoneAllRounded';
-import BookIcon from '@material-ui/icons/Book';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { useViewportScroll } from 'framer-motion'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 // import Image from 'next/image'
 // import logo from "../../public/icon-192x192.png"
@@ -45,7 +31,7 @@ const useStyles = makeStyles({
 
 export default function Navbar({ userType }) {
     const classes = useStyles();
-    const [state, setState] = React.useState({
+    const [state, setState] = useState({
         left: false,
     });
     let color = ''
@@ -65,7 +51,7 @@ export default function Navbar({ userType }) {
     };
     const handleIcon = (link, color) => {
         if (link === 'Home') return <HomeIcon style={{ color }} />
-        if (link === 'Admin Profile' || link == 'User Profile' || link == "Vendor Profile") return <ListAltIcon style={{ color }} />
+        if (link === 'Admin Profile' || link == 'Client Profile' || link == "Vendor Profile") return <AccountCircleIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
         if (link === 'Data') return <MenuBookIcon style={{ color }} />
     }
@@ -85,7 +71,7 @@ export default function Navbar({ userType }) {
         }
     }
     const clientLinks = {
-        ['User Profile']: {
+        ['Client Profile']: {
             path: '/profile',
         },
         Settings: {

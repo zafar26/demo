@@ -74,11 +74,11 @@ export default function dataGrid() {
 
     useEffect(() => {
 
-        db.table('login')
-            .toArray()
-            .then((login) => {
-                console.log(login, "Login")
-            });
+        // db.table('login')
+        //     .toArray()
+        //     .then((login) => {
+        //         console.log(login, "Login")
+        //     });
     }, [db]);
 
     const classes = useStyles();

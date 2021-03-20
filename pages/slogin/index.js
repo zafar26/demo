@@ -19,11 +19,11 @@ export default function Login() {
     const handleMouseDownPassword = (event, link) => {
         event.preventDefault();
 
-        db.login.add({
-            userType: "Vendor",
-            email: email,
-            password: password
-        })
+        // db.login.add({
+        //     userType: "Vendor",
+        //     email: email,
+        //     password: password
+        // })
         router.push(link)
     };
     // const handleClick = (e, setIsLogin) => {

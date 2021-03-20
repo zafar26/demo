@@ -37,6 +37,13 @@ export default function Home() {
 
           <button key="slogin" onClick={e => router.push('/slogin')}> GO TO /slogin
           </button>
+
+          <button key="corder" onClick={e => router.push('/clientOrder')}> GO TO /client1
+          </button>
+
+          <button key="cpage" onClick={e => router.push('/clientPage')}> GO TO /client2
+          </button>
+
         </div>
 
       </main>
