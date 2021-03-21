@@ -54,6 +54,8 @@ export default function Navbar({ userType }) {
         if (link === 'Admin Profile' || link == 'Client Profile' || link == "Vendor Profile") return <AccountCircleIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
         if (link === 'Data') return <MenuBookIcon style={{ color }} />
+        if (link === 'Client 1' || link == 'Client 2') return <MenuBookIcon style={{ color }} />
+
     }
 
     const links = {
@@ -70,12 +72,21 @@ export default function Navbar({ userType }) {
 
         }
     }
+    // const clientLinks = {
+    //     ['Client Profile']: {
+    //         path: '/profile',
+    //     },
+    //     Settings: {
+    //         path: '/settings',
+
+    //     }
+    // }
     const clientLinks = {
-        ['Client Profile']: {
-            path: '/profile',
+        ['Client 1']: {
+            path: '/clientOrder',
         },
-        Settings: {
-            path: '/settings',
+        ['Client 2']: {
+            path: '/clientPage',
 
         }
     }

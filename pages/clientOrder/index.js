@@ -49,7 +49,13 @@ export default function Login() {
         //     description,
         //     deliveryDate: date
         // })
-        router.push(link)
+        let
+            message =
+
+                router.push({
+                    pathname: link,
+                    query: { message: "Succesfully Request has been saved" }
+                })
     };
     const productsLabel = [
         {
@@ -81,7 +87,7 @@ export default function Login() {
                 <div className={styles.pageInner}>
                     <form
                         className={styles.form}
-                        onSubmit={e => router.push('/cdashboard')}
+                        onSubmit={e => router.push('/succes')}
                         noValidate autoComplete="off">
                         <div className={styles.accountCircle}>
                             <h2 style={{ color: 'gray' }}>Create Order </h2>
@@ -132,7 +138,7 @@ export default function Login() {
                         </div>
                         <div className={styles.submitbutton}>
                             <Button variant="contained" color="primary" style={{ color: 'white' }}
-                                onClick={e => handleMouseDownPassword(e, '/cdashboard')}
+                                onClick={e => handleMouseDownPassword(e, '/succes')}
                             // onClick={e => handleClick(e, props.setIsLogin)}
                             >
                                 Create
