@@ -9,7 +9,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 
 const useStyles = makeStyles({
     root: {
-        width: "90vw"
+        width: "100vw"
     }
 });
 

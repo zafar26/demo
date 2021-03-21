@@ -3,6 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer";
 import OrderBar from "../../Components/OrderBar";
 import { useState } from "react";
+import { DataGrid } from '@material-ui/data-grid';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +19,45 @@ export default function SimpleTabs() {
     const classes = useStyles();
     const [value, setValue] = useState("orders");
 
+
+    const columns = [
+        {
+            field: 'id', headerName: 'ID', width: 120
+        },
+        { field: 'product', headerName: 'Product', width: 120 },
+        { field: 'quantity', headerName: 'Quantity', width: 120 },
+        { field: 'date', headerName: 'Date', width: 120 },
+        { field: 'ammount', headerName: 'Ammount', width: 120 },
+    ]
+
+    let rows = [
+        {
+            "id": "602380ef2349dcc1839ce933",
+            "product": "product 1",
+            "quantity": 2,
+            "date": "",
+            "ammount": 25.00,
+        },
+
+        {
+            "id": "602380ef2349dcc1839ce934",
+            "product": "product 2",
+            "quantity": 3,
+            "date": "",
+            "ammount": 45.00,
+        },
+
+        {
+            "id": "602380ef2349dcc1839ce935",
+            "product": "product 3",
+            "quantity": 4,
+            "date": "",
+            "ammount": 75.00,
+        }
+    ]
+    if (value == "ledger") {
+        columns.splice(2, 1)
+    }
     return (
         <div className={classes.root}>
             <Navbar userType="Client" />
@@ -25,11 +65,40 @@ export default function SimpleTabs() {
 
                 {value == "orders" && <OrderBar />}
                 {value == "payments" && <div>
-                    PAYMENTS HISTORY
-            </div>}
+                    <h4 style={{ display: 'flex', justifyContent: 'center' }}>
+                        PAYMENTS HISTORY
+                    </h4>
+
+                    <div style={{ height: '80vh' }}>
+                        <DataGrid
+                            columns={columns}
+                            rows={rows}
+                            pageSize={15}
+                            checkboxSelection
+                            // showToolbar
+                            density="compact"
+                        />
+                    </div>
+                </div>}
                 {value == "ledger" && <div>
-                    LEDGER REPORTS
-            </div>}
+
+                    <h4 style={{ display: 'flex', justifyContent: 'center' }}>
+                        LEDGER REPORTS
+                    </h4>
+
+
+
+                    <div style={{ height: '80vh' }}>
+                        <DataGrid
+                            columns={columns}
+                            rows={rows}
+                            pageSize={15}
+                            checkboxSelection
+                            // showToolbar
+                            density="compact"
+                        />
+                    </div>
+                </div>}
             </div>
 
             <div style={{ position: 'fixed', bottom: 0 }}>

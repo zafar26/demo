@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { useState } from "react";
+import { DataGrid } from '@material-ui/data-grid';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -57,6 +58,58 @@ export default function OrderBar() {
         setValue(newValue);
     };
 
+
+    const columns = [
+        {
+            field: 'id', headerName: 'ID', width: 120
+        },
+        { field: 'product', headerName: 'Product', width: 120 },
+        { field: 'quantity', headerName: 'Quantity', width: 120 },
+        { field: 'expectedDate', headerName: 'Expected Date', width: 120 },
+        { field: 'employeeName', headerName: 'Employee Name', width: 120 },
+    ]
+    if (value == 1) {
+        columns.splice(3, 1, { field: 'completedDate', headerName: 'Completed Date', width: 120 })
+    }
+
+    let rows = [
+        {
+            "id": "602380ef2349dcc1839ce939",
+            "product": "product 1",
+            "quantity": 2,
+            "expectedDate": 'Date',
+            "completedDate": 'Date',
+            "employeeName": "Mudassir",
+        },
+
+        {
+            "id": "602380ef2349dcc1839ce938",
+            "product": "product 2",
+            "quantity": 2,
+            "expectedDate": 'Date',
+            "completedDate": 'Date',
+            "employeeName": "Ahmed",
+        },
+
+        {
+            "id": "602380ef2349dcc1839ce937",
+            "product": "product 6",
+            "quantity": 2,
+            "expectedDate": 'Date',
+            "completedDate": 'Date',
+            "employeeName": "Zafar",
+        }
+        ,
+        {
+            "id": "602380ef2349dcc1839ce936",
+            "product": "product 4",
+            "quantity": 2,
+            "expectedDate": 'Date',
+            "completedDate": 'Date',
+            "employeeName": "Sai",
+        }
+
+    ]
     return (
         <div className={classes.root}>
             <div style={{ display: 'flex', justifyContent: 'center', fontSize: '14px', padding: '10px 5px ' }}>
@@ -74,11 +127,33 @@ export default function OrderBar() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0} >
-                Pending
-      </TabPanel>
+
+
+                <div style={{ height: '68vh' }}>
+                    <DataGrid
+                        columns={columns}
+                        rows={rows}
+                        pageSize={15}
+                        checkboxSelection
+                        // showToolbar
+                        density="compact"
+                    />
+                </div>
+
+            </TabPanel>
             <TabPanel value={value} index={1}>
-                Completed
-      </TabPanel>
+
+                <div style={{ height: '68vh' }}>
+                    <DataGrid
+                        columns={columns}
+                        rows={rows}
+                        pageSize={15}
+                        checkboxSelection
+                        // showToolbar
+                        density="compact"
+                    />
+                </div>
+            </TabPanel>
 
         </div>
     );
