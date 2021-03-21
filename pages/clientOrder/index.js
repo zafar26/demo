@@ -108,8 +108,11 @@ export default function Login() {
                                     ))}
                                 </Select>
                             </FormControl>
-                            <MyInput name='Quantity' value={quantity} onChange={setQuantity} size="small" />
-                            <FormControl style={{ marginTop: 10 }}>
+                            <FormControl style={{ width: '210px' }}>
+
+                                <MyInput name='Quantity' value={quantity} onChange={setQuantity} size="small" />
+                            </FormControl>
+                            <FormControl style={{ marginTop: 10, width: '210px' }}>
 
                                 <TextField
                                     id="outlined-multiline-static"
