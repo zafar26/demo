@@ -87,7 +87,7 @@ export default function Login() {
                             <h2 style={{ color: 'gray' }}>Create Order </h2>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <FormControl variant="outlined" size="small" style={{ width: '210px' }}>
+                            <FormControl variant="outlined" size="small" style={{ width: '200px' }}>
                                 <InputLabel id="d">Products</InputLabel>
                                 <Select
                                     labelId="d"
@@ -108,11 +108,11 @@ export default function Login() {
                                     ))}
                                 </Select>
                             </FormControl>
-                            <FormControl style={{ width: '210px' }}>
+                            <FormControl style={{ width: '200px' }}>
 
                                 <MyInput name='Quantity' value={quantity} onChange={setQuantity} size="small" />
                             </FormControl>
-                            <FormControl style={{ marginTop: 10, width: '210px' }}>
+                            <FormControl style={{ marginTop: 10, width: '200px' }}>
 
                                 <TextField
                                     id="outlined-multiline-static"
@@ -123,9 +123,10 @@ export default function Login() {
                                     variant="outlined"
                                     value={description}
                                     onChange={e => setDescription(e.target.value)}
+                                    style={{ width: '200px' }}
                                 />
                             </FormControl>
-                            <FormControl style={{ marginTop: 15 }}>
+                            <FormControl style={{ marginTop: 15, width: '200px' }}>
                                 <DateTime value={date} onChange={e => setDate(e.target.value)} label="Expected Delivery" />
                             </FormControl>
                         </div>
