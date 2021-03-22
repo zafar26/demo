@@ -44,6 +44,12 @@ export default function Home() {
           <button key="cpage" onClick={e => router.push('/clientPage')}> GO TO /client2
           </button>
 
+          <button key="spage1" onClick={e => router.push('/supplierPage')}> GO TO /Supplier1
+          </button>
+
+          <button key="spage2" onClick={e => router.push('/supplierPage2')}> GO TO /Supplier2
+          </button>
+
         </div>
 
       </main>
