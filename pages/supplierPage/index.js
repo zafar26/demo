@@ -111,13 +111,13 @@ export default function SimpleTabs() {
     return (
         <div className={classes.root}>
             <Navbar userType="Supplier" />
-            <div style={{ marginTop: '70px' }}>
+            <div style={{ marginTop: '70px', height: '77vh' }}>
 
                 {value == "acceptedOrders" &&
 
                     <div>
                         <h4 style={{ display: 'flex', justifyContent: 'center' }}>Accepted Orders</h4>
-                        <div style={{ height: '80vh' }}>
+                        <div style={{ height: '77vh' }}>
                             <DataGrid
                                 columns={columns}
                                 rows={rows}
@@ -134,7 +134,7 @@ export default function SimpleTabs() {
                         Expected Delivery
                     </h4>
 
-                    <div style={{ height: '80vh' }}>
+                    <div style={{ height: '77vh' }}>
                         <DataGrid
                             columns={expectedDeliveryColumns}
                             rows={expectedDeliveryRows}
