@@ -27,7 +27,7 @@ export default function Home() {
 
       <main className={styles.main}>
         MAIN
-         <div style={{ display: 'flex' }}>
+         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
 
           <button key="login" onClick={e => router.push('/login')}> GO TO /login
           </button>
