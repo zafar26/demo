@@ -61,7 +61,7 @@ export default function SimpleTabs() {
 
     const expectedDeliveryColumns = [
         {
-            field: 'id', headerName: 'ID', width: 120
+            field: 'id', headerName: 'Order ID', width: 120
         },
         { field: 'product', headerName: 'Product', width: 120 },
         { field: 'quantity', headerName: 'Quantity', width: 120 },
@@ -71,7 +71,7 @@ export default function SimpleTabs() {
 
     let expectedDeliveryRows = [
         {
-            "id": "602380ef2349dcc1839ce939",
+            "id": 1,
             "product": "product 1",
             "quantity": 2,
             "expectedDate": 'Date',
@@ -79,7 +79,7 @@ export default function SimpleTabs() {
         },
 
         {
-            "id": "602380ef2349dcc1839ce938",
+            "id": 2,
             "product": "product 2",
             "quantity": 2,
             "expectedDate": 'Date',
@@ -87,7 +87,7 @@ export default function SimpleTabs() {
         },
 
         {
-            "id": "602380ef2349dcc1839ce937",
+            "id": 3,
             "product": "product 6",
             "quantity": 2,
             "expectedDate": 'Date',
@@ -95,7 +95,7 @@ export default function SimpleTabs() {
         }
         ,
         {
-            "id": "602380ef2349dcc1839ce936",
+            "id": 4,
             "product": "product 4",
             "quantity": 2,
             "expectedDate": 'Date',

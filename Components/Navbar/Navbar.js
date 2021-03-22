@@ -54,7 +54,7 @@ export default function Navbar({ userType }) {
         if (link === 'Admin Profile' || link == 'Client Profile' || link == "Vendor Profile") return <AccountCircleIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
         if (link === 'Data') return <MenuBookIcon style={{ color }} />
-        if (['Client 1', 'Client 2', 'Supplier 1', 'Supplier 2'].includes(link)) return <MenuBookIcon style={{ color }} />
+        if (['New Orders', 'Reports', 'Orders'].includes(link)) return <MenuBookIcon style={{ color }} />
         // if (link === 'Client 1' || link == 'Client 2') return <MenuBookIcon style={{ color }} />
 
     }
@@ -83,20 +83,20 @@ export default function Navbar({ userType }) {
     //     }
     // }
     const clientLinks = {
-        ['Client 1']: {
+        ['New Orders']: {
             path: '/clientOrder',
         },
-        ['Client 2']: {
+        ['Reports']: {
             path: '/clientPage',
 
         }
     }
 
     const vendorLinks = {
-        ['Supplier 1']: {
+        ['Orders']: {
             path: '/supplierPage',
         },
-        ['Supplier 2']: {
+        ['Reports']: {
             path: '/supplierPage2',
 
         }
@@ -125,7 +125,7 @@ export default function Navbar({ userType }) {
                 <div style={{ height: '67px', backgroundColor: '#fff', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                     <ArrowBackIcon style={{ color }} />
                     <h6 style={{ color: 'gray', fontSize: '1.25rem' }}>
-                        Sample PWA
+                        VKPL
                     </h6>
                 </div>
                 <Divider />
