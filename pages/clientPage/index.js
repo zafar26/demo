@@ -32,7 +32,8 @@ export default function SimpleTabs() {
 
     let rows = [
         {
-            "orderId": "1",
+            "id": 1,
+            "orderId": 1,
             "product": "product 1",
             "quantity": 2,
             "date": "",
@@ -40,7 +41,8 @@ export default function SimpleTabs() {
         },
 
         {
-            "orderId": "2",
+            "id": 2,
+            "orderId": 2,
             "product": "product 2",
             "quantity": 3,
             "date": "",
@@ -48,7 +50,8 @@ export default function SimpleTabs() {
         },
 
         {
-            "orderId": "3",
+            "id": 3,
+            "orderId": 3,
             "product": "product 3",
             "quantity": 4,
             "date": "",
