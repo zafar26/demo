@@ -61,7 +61,7 @@ export default function Login() {
                         noValidate autoComplete="off">
                         <div className={styles.accountCircle}>
                             <AccountCircle style={{ fontSize: "60", color: 'gray' }} />
-                            <h2 style={{ color: 'gray' }}>Vendor Login </h2>
+                            <h2 style={{ color: 'gray' }}>Supplier Login </h2>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             {/* {inputs.map((item) =>

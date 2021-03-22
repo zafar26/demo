@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        MAIN
+        VKPL
          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
 
           <button key="login" onClick={e => router.push('/login')}> GO TO /login
@@ -37,17 +37,17 @@ export default function Home() {
 
           <button key="slogin" onClick={e => router.push('/slogin')}> GO TO /slogin
           </button>
-
+          {/* 
           <button key="corder" onClick={e => router.push('/clientOrder')}> GO TO /client1
+          </button> */}
+
+          <button key="cpage" onClick={e => router.push('/clientPage')}> GO TO /client Page
           </button>
 
-          <button key="cpage" onClick={e => router.push('/clientPage')}> GO TO /client2
-          </button>
+          {/* <button key="spage1" onClick={e => router.push('/supplierPage')}> GO TO /Supplier1
+          </button> */}
 
-          <button key="spage1" onClick={e => router.push('/supplierPage')}> GO TO /Supplier1
-          </button>
-
-          <button key="spage2" onClick={e => router.push('/supplierPage2')}> GO TO /Supplier2
+          <button key="spage2" onClick={e => router.push('/supplierPage2')}> GO TO /Supplier Page
           </button>
 
         </div>

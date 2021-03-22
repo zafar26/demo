@@ -39,7 +39,7 @@ export default function Navbar({ userType }) {
         color = "#eeebdd"
     } else if (userType == "Client") {
         color = "#caf7e3"
-    } else {
+    } else if (userType == "Supplier") {
         color = "#ffb4b4"
     }
     const toggleDrawer = (anchor, open) => (event) => {

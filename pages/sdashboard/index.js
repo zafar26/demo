@@ -85,7 +85,7 @@ export default function dataGrid() {
     return (
         <AnimatePresence>
             <div style={{ width: '100vw', display: 'flex' }}>
-                <Navbar userType="Vendor" />
+                <Navbar userType="Supplier" />
             </div>
             <motion.div
                 varriants={containerVariants}
@@ -102,7 +102,7 @@ export default function dataGrid() {
                     exit="exit"
                     className={classes.root}
                     style={{ marginTop: '80px', width: '100vw', height: '80vh', backgroundColor: 'white', overflow: 'scroll', position: 'relative' }}>
-                    <h3 style={{ display: 'flex', justifyContent: 'center' }}>Vendor Dashboard</h3>
+                    <h3 style={{ display: 'flex', justifyContent: 'center' }}>Supplier Dashboard</h3>
                     <DataGrid
                         columns={columns}
                         rows={dummyData}
