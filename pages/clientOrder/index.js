@@ -54,7 +54,7 @@ export default function Login() {
 
                 router.push({
                     pathname: link,
-                    query: { message: "Succesfully Request has been saved" }
+                    query: { message: "Order placed succesfully with Order No: 4 " }
                 })
     };
     const productsLabel = [
@@ -90,7 +90,7 @@ export default function Login() {
                         onSubmit={e => router.push('/succes')}
                         noValidate autoComplete="off">
                         <div className={styles.accountCircle}>
-                            <h2 style={{ color: 'gray' }}>Create Order </h2>
+                            <h2 style={{ color: 'gray' }}>Submit Order </h2>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 20 }}>
                             <FormControl variant="outlined" size="small" style={{ width: '210px' }}>
@@ -141,7 +141,7 @@ export default function Login() {
                                 onClick={e => handleMouseDownPassword(e, '/succes')}
                             // onClick={e => handleClick(e, props.setIsLogin)}
                             >
-                                Create
+                                Submit
                         </Button>
                         </div>
                     </form>

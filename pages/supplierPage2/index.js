@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTabs() {
     const classes = useStyles();
-    const [value, setValue] = useState("orders");
+    const [value, setValue] = useState("ledger");
 
 
     const columns = [
         {
-            field: 'orderId', headerName: 'ID', width: 120
+            field: 'orderId', headerName: 'Order ID', width: 120
         },
         { field: 'product', headerName: 'Product', width: 120 },
         { field: 'quantity', headerName: 'Quantity', width: 120 },
@@ -32,7 +32,8 @@ export default function SimpleTabs() {
 
     let rows = [
         {
-            "orderId": "1",
+            "id": 1,
+            "orderId": 1,
             "product": "product 1",
             "quantity": 2,
             "date": "",
@@ -40,7 +41,8 @@ export default function SimpleTabs() {
         },
 
         {
-            "orderId": "2",
+            "id": 2,
+            "orderId": 2,
             "product": "product 2",
             "quantity": 3,
             "date": "",
@@ -48,7 +50,8 @@ export default function SimpleTabs() {
         },
 
         {
-            "orderId": "3",
+            "id": 3,
+            "orderId": 3,
             "product": "product 3",
             "quantity": 4,
             "date": "",
@@ -58,37 +61,54 @@ export default function SimpleTabs() {
     if (value == "ledger") {
         columns.splice(2, 1)
     }
+    const transportationColumns = [
+        {
+            field: 'type', headerName: 'type', width: 120
+        },
+        { field: 'name', headerName: 'Name', width: 140 },
+        { field: 'awb', headerName: 'AWB No', width: 120 },
+        { field: 'dispatchDate', headerName: 'Dispatch Date', width: 150 },
+
+    ]
+    let transportationRows = [
+        {
+            "id": 1,
+            "type": "type 1",
+            "name": "Transporation 1",
+            "awb": 233344444,
+            "dispatchDate": "",
+        }, {
+            "id": 2,
+            "type": "type 2",
+            "name": "Transporation 3",
+            "awb": 233344455,
+            "dispatchDate": "",
+        }, {
+            "id": 3,
+            "type": "type 3",
+            "name": "Transporation 3",
+            "awb": 233344466,
+            "dispatchDate": "",
+        }, {
+            "id": 4,
+            "type": "type 1",
+            "name": "Transporation 4",
+            "awb": 233344477,
+            "dispatchDate": "",
+        },
+    ]
+
     return (
         <div className={classes.root}>
-            <Navbar userType="Client" />
-            <div style={{ marginTop: '60px' }}>
+            <Navbar userType="Supplier" />
+            <div style={{ marginTop: '70px', height: '77vh' }}>
 
-                {value == "orders" && <OrderBar />}
-                {value == "payments" && <div>
-                    <h4 style={{ display: 'flex', justifyContent: 'center' }}>
-                        PAYMENTS HISTORY
-                    </h4>
-
-                    <div style={{ height: '80vh' }}>
-                        <DataGrid
-                            columns={columns}
-                            rows={rows}
-                            pageSize={15}
-                            checkboxSelection
-                            // showToolbar
-                            density="compact"
-                        />
-                    </div>
-                </div>}
                 {value == "ledger" && <div>
-
                     <h4 style={{ display: 'flex', justifyContent: 'center' }}>
-                        LEDGER REPORTS
+                        Ledger Reports
                     </h4>
 
-
-
-                    <div style={{ height: '80vh' }}>
+                    <div style={{ height: '77vh' }}>
                         <DataGrid
                             columns={columns}
                             rows={rows}
@@ -99,11 +119,29 @@ export default function SimpleTabs() {
                         />
                     </div>
                 </div>}
+
+                {value == "transportation" && <div>
+                    <h4 style={{ display: 'flex', justifyContent: 'center' }}>
+                        Transportation Details
+                    </h4>
+
+                    <div style={{ height: '77vh' }}>
+                        <DataGrid
+                            columns={transportationColumns}
+                            rows={transportationRows}
+                            pageSize={15}
+                            checkboxSelection
+                            // showToolbar
+                            density="compact"
+                        />
+                    </div>
+                </div>}
+
             </div>
 
-            <div style={{ position: 'fixed', bottom: 0 }}>
+            <div style={{ position: 'fixed', bottom: 0, width: '100vw' }}>
 
-                <Footer value={value} setValue={setValue} type="Client" />
+                <Footer value={value} setValue={setValue} type="Supplier" page='2' />
             </div>
         </div>
     );

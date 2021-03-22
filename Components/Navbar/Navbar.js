@@ -54,7 +54,8 @@ export default function Navbar({ userType }) {
         if (link === 'Admin Profile' || link == 'Client Profile' || link == "Vendor Profile") return <AccountCircleIcon style={{ color }} />
         if (link === 'Settings') return <SettingsIcon style={{ color }} />
         if (link === 'Data') return <MenuBookIcon style={{ color }} />
-        if (link === 'Client 1' || link == 'Client 2') return <MenuBookIcon style={{ color }} />
+        if (['Client 1', 'Client 2', 'Supplier 1', 'Supplier 2'].includes(link)) return <MenuBookIcon style={{ color }} />
+        // if (link === 'Client 1' || link == 'Client 2') return <MenuBookIcon style={{ color }} />
 
     }
 
@@ -92,18 +93,18 @@ export default function Navbar({ userType }) {
     }
 
     const vendorLinks = {
-        ['Vendor Profile']: {
-            path: '/profile',
+        ['Supplier 1']: {
+            path: '/supplierPage',
         },
-        Settings: {
-            path: '/settings',
+        ['Supplier 2']: {
+            path: '/supplierPage2',
 
         }
     }
     let arr = []
     if (userType == "Client") {
         arr = Object.entries(clientLinks)
-    } else if (userType == "Vendor") {
+    } else if (userType == "Supplier") {
         arr = Object.entries(vendorLinks)
     } else {
         arr = Object.entries(links)
